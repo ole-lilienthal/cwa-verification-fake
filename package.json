@@ -1,0 +1,16 @@
+{
+  "name": "cwa-verification-fake",
+  "version": "0.0.1",
+  "description": "Fake Validation service for the Corona-Warn-App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No tests specified\" && exit 1"
+  },
+  "author": "Ole Lilienthal",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

@@ -8,4 +8,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8004
-CMD [ "node", "server.js" ]
+CMD [ "node", "index.js" ]

@@ -1,7 +1,7 @@
 'use strict';
 
 const validTans = [
-  "b69ab69f-9823-4549-8961-c41sa74b2f36"
+  "edc07f08-a1aa-11ea-bb37-0242ac130002"
 ];
 
 const server_port = process.env.PORT || 8004;

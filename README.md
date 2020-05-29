@@ -6,7 +6,7 @@ Enter your fake TANs to the validTans array in the index.js. By default the serv
 
 ```
 {
-    "tan": "b69ab69f-9823-4549-8961-c41sa74b2f36"
+    "tan": "edc07f08-a1aa-11ea-bb37-0242ac130002"
 }
 ```
 

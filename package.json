@@ -1,6 +1,6 @@
 {
   "name": "cwa-verification-fake",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Fake Validation service for the Corona-Warn-App",
   "main": "index.js",
   "scripts": {

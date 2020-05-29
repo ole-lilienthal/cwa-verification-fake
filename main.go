@@ -20,7 +20,7 @@ func (resp responseBody) isValid(validtans []string) bool {
 	return false
 }
 func main() {
-	validtans := []string{"b69ab69f-9823-4549-8961-c41sa74b2f36"}
+	validtans := []string{"edc07f08-a1aa-11ea-bb37-0242ac130002"}
 
 	serverhost := os.Getenv("IP")
 	if serverhost == "" {

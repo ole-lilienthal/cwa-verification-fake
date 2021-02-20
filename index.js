@@ -1,5 +1,26 @@
 'use strict';
 
+/*
+ * TeleTAN process
+ * 1. User enters 10-digit teleTan
+ * 2. Client sends teleTAN to Verification Server /version/v1/registrationToken
+ * 3. Verification Server returns registrationToken
+ * 4. Client sends registrationToken to Verification Server /version/v1/tan
+ * 5. Verification Server returns tan
+ * 6. Client sends tan + diagnosis keys to Upload server /version/v1/diagnosis-keys"
+ *
+ * GUID process
+ * 1. User enters 38-digit SHA-256 hasehd GUID
+ * 2. Client sends hashed GUID to Verification Server /version/v1/registrationToken
+ * 3. Verification Server returns registrationToken
+ * 4. Client periodically sends registrationToken to Verification Server /version/v1/testresult
+ * 5. Verification Server returns test result
+ * 6. If positive continue, otherwise return to step 4 for 21 days
+ * 7. Client sends registrationToken to Verification Server /version/v1/tan
+ * 8. Verification Server returns tan
+ * 6. Client sends tan + diagnosis keys to Upload server /version/v1/diagnosis-keys"
+*/
+
 // TANS accepted by /version/v1/tan/verify
 const validTans = [
   "edc07f08-a1aa-11ea-bb37-0242ac130002"
@@ -13,8 +34,10 @@ const teleTanToRegToken = {
 
 // SHA-256 hashed GUIDs accepted by /version/v1/registrationToken
 const guidsToRegToken = {
-  "f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b": "7f86c6fd-5c66-4003-abb1-4eee36680c9b",
-  "0199effab87800689c15c08e234db54f088cc365132ffc230e882b82cd3ecf95": "b3586b13-280f-4a6d-8b54-5fbf8fb8d550"
+  // GUID = 3BF1D4-1C6003DD-733D-41F1-9F30-F85FA7406BF7
+  "75552e6e1dae7a520bad64e92b7569447d0f5ca3c539335e0418a7695606147e": "7f86c6fd-5c66-4003-abb1-4eee36680c9b",
+  // GUID = 3D6D08-3567F3F2-4DCF-43A3-8737-4CD1F87D6FDA
+  "49cadef62bc9cdd16c73a044d1ff85e229cfc7a308ef4413d42af8276c9e4e98": "b3586b13-280f-4a6d-8b54-5fbf8fb8d550"
 };
 
 // Registration tokens accepted by /version/v1/tan
